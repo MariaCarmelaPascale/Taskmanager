@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>TaskManager</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1 style="color:SlateBlue">Add Tag</h1>
+	<form th:action="@{|/projects/${projectId}/tags/add|}" th:object="${tagForm}" method="post">
+		<table>
+			<tr>
+				<td><label for="nameInput">Name</label></td>
+				<td><input id=nameInput type="text" placeholder="NAME" required
+						   th:field="*{name}" /></td>
+				<td th:if="${#fields.hasErrors('name')}"
+					th:errors="${tagForm.name}" th:style="'color:red'"></td>
+			</tr>
+			<tr>
+				<td><label for="colorInput">Color</label></td>
+				<td><input id="colorInput" type="text" placeholder="COLOR" required
+							th:field="*{color}" /></td>
+				<td th:if="${#fields.hasErrors('color')}"
+					th:errors="${tagForm.color}" th:style="'color:red'"></td>
+			</tr>
+			<tr>
+				<td><label for="descriptionInput">Description</label></td>
+				<td><input id="descriptionInput" type="text" placeholder="DESCRIPTION" required
+							th:field="*{description}" /></td>
+				<td th:if="${#fields.hasErrors('description')}"
+					th:errors="${tagForm.description}" th:style="'color:red'"></td>
+			</tr>
+		</table>
+		<br>
+		<button type="submit"class="btn btn-info btn-sm">Add tag</button>
+		</form>
+		<br>
+</body>
+<footer>
+	Back to <a th:href="|/projects/${projectId}|">Project</a>
+</footer>
+</html>

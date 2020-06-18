@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>TaskManager</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1 style="color:SlateBlue">Add Task</h1>
+	<div>
+		<form method = "POST" th:action="@{|/projects/${projectId}/tasks/add|}" 
+						  th:object="${taskForm}">
+			<table>
+				<tr>
+					<td><label>Name</label></td>
+					<td><input type="text" placeholder="NAME" required th:field="*{name}"></td>
+					<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" th:style="'color:red'"></td>	
+				</tr>
+				<tr>
+					<td><label>Description</label></td>
+					<td><input type="text" placeholder="DESCRIPTION" required th:field="*{description}"></td>
+					<td th:if="${#fields.hasErrors('description')}" th:errors="*{description}" th:style="'color:red'"></td>
+				</tr>
+			</table>
+			<br>
+			<button type="submit" class="btn btn-info btn-sm">Add task</button>
+		</form>
+	</div>
+	<br>
+</body>
+<footer>
+	Back to <a th:href="|/projects/${projectId}|">Project</a>
+</footer>
+</html>

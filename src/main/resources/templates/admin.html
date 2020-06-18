@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Admin page</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	 <h1 style="color:SlateBlue" th:text="|Here is your personal page, dear Admin ${admin.firstName}.|"></h1>
+
+    <h4><a href="/admin/users">All Users List</a></h4>
+</body>
+<footer>
+<a href="/home">Home</a></footer>
+</html>

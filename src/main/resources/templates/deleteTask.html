@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>TaskManager</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div>
+		<h3 style="color:SlateBlue">Sei sicuro di voler eliminare il Task?</h3>
+	</div>
+	
+	<div>
+		<form th:action="@{|/projects/${projectId}/tasks/${taskId}/delete|}" method="POST">
+			<button type="submit"class="btn btn-info btn-sm">Conferma</button>
+		</form>
+	</div>
+	<br>
+	<footer>
+		Back to <a th:href="|/projects/${projectId}|">Project</a>
+	</footer>
+</body>
+</html>

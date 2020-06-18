@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>TaskManager</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	<h1 th:text="${project.name}"></h1>
+	
+	<div th:if="${members.size() > 0}">
+        <h3 style="color:DodgerBlue">Shared with:</h3>
+        <ul>
+            <li th:each="member : ${members}">
+                <div th:text="|${member.firstName} ${member.lastName}|"></div>
+            </li>
+        </ul>
+    </div>
+    <br>
+	<div th:if="${project.tags.size()>0}">
+		<h3 style="color:SlateBlue">TAGS:</h3>
+		<div>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Color</th>
+					<th>Description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="tag: ${project.tags}">
+					<td th:text="${tag.name}"></td>
+					<td th:text="${tag.color}"></td>
+					<td th:text="${tag.description}"></td>
+					<td th:if="${project.owner == loggedUser}">
+				</tr>	
+			</tbody>
+		</table>
+		</div>
+	</div>
+	
+	<div th:if="${project.tasks.size()>0}">
+		<h3 style="color:SlateBlue">TASKS:</h3>
+		<ul>
+			<li th:each="task: ${project.tasks}">
+			<a th:href="|/projects/${projectId}/tasks/${task.id}|" th:text="${task.name}">...</a>
+			</li>
+		</ul>
+	</div>
+	<br>
+	<br>
+	<div>
+		<form method = "GET" th:action="@{|/projects/${project.id}/edit|}" th:if="${project.owner == loggedUser}">
+			<button class="btn btn-primary btn-sm" type="submit">Edit project</button>
+		<br>
+		</form>
+		<br>
+		<form method = "GET" th:action="@{|/projects/${project.id}/delete|}"  th:if="${project.owner == loggedUser}">
+			<button class="btn btn-primary btn-sm" type="submit">Delete project</button>
+		</form>
+		<br>
+		<form method = "GET" th:action="@{|/projects/${project.id}/share|}" th:if="${project.owner == loggedUser}">
+			<button class="btn btn-primary btn-sm" type="submit">Share project</button>
+		</form>
+		<br>
+		<form method = "GET" th:action="@{|/projects/${project.id}/tags/add|}" th:if="${project.owner == loggedUser}">
+			<button class="btn btn-primary btn-sm" type="submit">Add tag</button>
+		</form>
+		<br>
+		<form method = "GET" th:action="@{|/projects/${project.id}/tags/delete|}" th:if="${project.owner == loggedUser}">
+			<button class="btn btn-primary btn-sm" type="submit">Delete tag</button>
+		</form>
+		<br>
+		<form method = "GET" th:action="@{|/projects/${project.id}/tasks/add|}" th:if="${project.owner == loggedUser}">
+			<button class="btn btn-primary btn-sm" type="submit">Add task</button>
+		</form>
+		<br>
+	</div>
+</body>
+<footer>
+		Back to <a href="/home">Home Page</a>
+	</footer>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>TaskManager</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h1 style="color:SlateBlue">Edit Project</h1>
+	<form th:action="@{|/projects/${projectId}/edit|}" th:object="${projectForm}" method="POST">
+		<table>
+			<tr>
+				<td><label for="nameInput">Name</label>
+				<td><input id=nameInput type="text" placeholder="NAME" required
+						   th:field="*{name}" /></td>
+				<td th:if="${#fields.hasErrors('name')}"
+					th:errors="*{name}" th:style="'color:red'"></td>
+			</tr>	
+		</table>
+			<br>
+			<button type="submit"class="btn btn-info btn-sm">Edit project</button>
+	</form>
+	<br>
+	<footer>
+	Back to <a th:href="|/projects/${projectId}|">Project</a>
+	</footer>
+</body>
+</html>

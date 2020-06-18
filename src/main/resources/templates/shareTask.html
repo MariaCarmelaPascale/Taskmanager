@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org">
+<head>
+	<title>TaskManager</title>
+	<link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<h3 style="color:SlateBlue">Insert user that you want to share the task</h3>
+	<div>
+		<form th:action="@{|/projects/${projectId}/tasks/${taskId}/share|}" method="POST">
+			<input type=text placeholder="USERNAME" th:field="${user.userName}">
+			<button type="submit" class="btn btn-info btn-sm">Share</button>
+		</form>
+	</div>
+	<br>
+	<footer>
+	Back to <a th:href="|/projects/${projectId}/tasks/${taskId}|">Task</a>
+</footer>
+</body>
+</html>

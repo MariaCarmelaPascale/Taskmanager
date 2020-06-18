@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All User Projects</title>
+    <link href="https://getbootstrap.com/docs/3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1 style="color:SlateBlue">The list of all Projects of the selected User:</h1>
+    <div>
+        <ul>
+            <li th:each="project : ${projectList}">
+                <div>
+                    <form th:action="@{|/admin/users/${userName}/projects/${project.id}/delete|}" method="post">
+                        <label th:text="${project.name}"></label>
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

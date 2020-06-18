@@ -1,0 +1,84 @@
+Casi d'uso: USER
+
+ • Signup :
+ 1. L'utente decide di registrarsi, scegliendo l'opzione Sign-Up.
+ 2. Il Sistema mostra una form che l'utente dovrà riempire.
+ 3. L'utente compila la form e si registra al Sistema.
+ Varianti:
+ 2-3(a). L'utente non compila adeguatamente uno dei campi della form, quindi il Sistema presenta dei messaggi d'errore.
+
+ • Autenticazione :
+ 1. L'utente inserisce i propri dati (username e password).
+ 2. Il Sistema autentica l'utente e mostra la sua homepage.
+ Varianti:
+ 2(a). L'utente inserisce dei dati che non sono corretti, il Sistema segnala l'errore e ripropone la form.
+
+• Visualizzare il mio profilo :
+1. L'utente, a partire dalla propria homepage, visualizza il proprio profilo selezionando l'opzione 'Profile'
+2. Il Sistema mostra una pagina in cui sono visualizzati i dati dell'utente.
+
+• Aggiornare il mio profilo :
+1. L'utente aggiorna il proprio profilo selezionando l'opzione 'Edit Profile' nel menu 'Profile'
+2. Il Sistema mostra una pagina in cui sono visualizzati i dati dell'utente.
+3. L'utente compila una form inserendo nuovamente i dati.
+4. Il Sistema registra le modifiche.
+
+---------
+
+Casi d'uso: PROJECT
+
+• Creare un nuovo progetto :
+1. L'utente crea un nuovo progetto selezionando l'opzione 'Create new Project'
+2. Il Sistema chiede all'utente di inserire il nome del progetto, successivamente registra il nuovo progetto creato.
+
+• Visualizzare i miei progetti :
+1. L'utente visualizza i propri progetti selezionando l'opzione 'My Projects'
+2. Il Sistema mostra la lista dei progetti creati dall'utente.
+
+• Visualizzare i progetti condivisi con me :
+1. L'utente visualizza i progetti di cui è membro selezionando l'opzione 'Projects shared with me'
+2. Il Sistema mostra la lista dei progetti di cui l'utente è membro.
+
+• Aggiornare i dati di un mio progetto :
+1. L'utente aggiorna i dati di un proprio progetto selezionando l'opzione 'Edit Project' nella pagina del progetto interessato.
+2. Il Sistema mostra una form in cui richiede le modifiche da effettuare, successivamente aggiorna il progetto.
+
+• Cancellare un mio progetto :
+1. L'utente cancella un proprio progetto selezionando l'opzione 'Delete Project' nella pagina del progetto interessato.
+2. Il Sistema rimuove il progetto.
+
+• Condividere un mio progetto con un altro utente :
+1. L'utente condivide un proprio progetto con un altro utente selezionando l'opzione 'Share Project' nella pagina del progetto interessato.
+2. Il Sistema chiede all'utente l'username dell'utente destinario, successivamente condivide il progetto.
+
+• Aggiungere un tag ad un mio progetto :
+1. L'utente aggiunge un tag ad un proprio progetto selezionando l'opzione 'Add Tag' nella pagina del progetto interessato.
+2. Il Sistema mostra una form che l'utente riempierà con i dati del tag che intende aggiungere, successivamente il Sistema aggiunge il tag al progetto.
+
+---------
+
+Casi d'uso: TASK
+
+• Aggiungere un nuovo Task a un mio progetto :
+1. L'utente aggiunge un task ad un proprio progetto selezionando l'opzione 'Add Task' nella pagina del progetto interessato.
+2. Il Sistema mostra una form che l'utente riempierà con i dati del task che intende aggiungere, successivamente il Sistema aggiunge il task al progetto.
+
+• Aggiornare un Task di un mio progetto :
+1. L'utente modifica un task del proprio progetto selezionando l'opzione 'Edit Task' nella pagina del task interessato.
+2. Il Sistema mostra una form in cui richiede le modifiche da effettuare, successivamente aggiorna il task.
+
+• Cancellare un Task da un mio progetto :
+1. L'utente rimuove un task dal proprio progetto selezionando l'opzione 'Delete Task' nella pagina del task interessato.
+2. Il Sistema rimuove il task dal progetto.
+
+• Assegnare un Task di un mio progetto ad un utente che ha visibilità sul mio progetto :
+1. L'utente assegna un task di un proprio progetto ad un altro utente selezionando l'opzione 'Assign Task' nella pagina del task interessato.
+2. Il Sistema chiede all'utente l'username dell'utente destinatario, successivamente assegna il task.
+
+• Aggiungere un Tag ad un task di un mio progetto :
+1. L'utente aggiunge un tag ad un task di un proprio progetto selezionando l'opzione 'Add Tag' nella pagina del task interessato.
+2. Il Sistema mostra all'utente l'elenco dei Tag del progetto a cui appartiene, sucessivamente aggiunge al task il tag scelto dall'utente.
+
+• Aggiungere un Commento ad un Task di un progetto su cui ho visibilità :
+1. L'utente aggiunge un commento sotto un task di progetto di cui è membro, selezionando l'opzione 'Add Comment' nella pagina del task interessato.
+2. Il Sistema registra il commento dell'utente nella pagina del task, d'ora in poi il commento ed il relativo creato saranno visibili nella pagina del task.
